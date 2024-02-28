@@ -35,11 +35,11 @@ try:
 
     products_info = []
 
-    for i in range(1, 25):
+    for i in range(1, 9):
         products_carts = driver.find_elements(By.XPATH, '//*[@data-index="{}"]'.format(i))
 
         for product_cart in products_carts:
-        	product_info = parse_product(product_cart, i)
+        	product_info = parse_product(driver, product_cart, i)
         	if product_info:
         		products_info.append(product_info)
 
